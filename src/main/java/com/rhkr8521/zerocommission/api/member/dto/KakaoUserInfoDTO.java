@@ -8,4 +8,3 @@ public class KakaoUserInfoDTO {
     private String email;         // 이메일
     private String nickname;      // 닉네임
 }
-
