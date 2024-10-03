@@ -117,7 +117,6 @@ public class OAuthService {
             userInfo.setId(result.get("id").toString());
             userInfo.setEmail(kakaoAccount.get("email") != null ? kakaoAccount.get("email").toString() : null);
             userInfo.setNickname(profile.get("nickname") != null ? profile.get("nickname").toString() : null);
-            userInfo.setProfileImage(profile.get("thumbnail_image_url") != null ? profile.get("thumbnail_image_url").toString() : null);
 
             return userInfo;
         } catch (Exception e) {

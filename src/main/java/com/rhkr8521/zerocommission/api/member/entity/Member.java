@@ -25,8 +25,6 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String email; // 이메일
     private String nickname; // 닉네임
-    private String imageUrl; // 프로필 이미지
-    private Boolean marketing_allow;
 
     @Enumerated(EnumType.STRING)
     private Role role; // 권한
@@ -53,20 +51,6 @@ public class Member extends BaseTimeEntity implements UserDetails {
     public Member updateRefreshToken(String updateRefreshToken) {
         return this.toBuilder()
                 .refreshToken(updateRefreshToken)
-                .build();
-    }
-
-    // 프로필이미지 필드 업데이트
-    public Member updateImageUrl(String updateImageUrl) {
-        return this.toBuilder()
-                .imageUrl(updateImageUrl)
-                .build();
-    }
-
-    // 마케팅 동의 여부 필드 업데이트
-    public Member updateMarketingAllow(Boolean updateMarketingAllow) {
-        return this.toBuilder()
-                .marketing_allow(updateMarketingAllow)
                 .build();
     }
 
