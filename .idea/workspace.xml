@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="583bee0e-fabe-45cf-84e1-994e810e56a0" name="Changes" comment="">
+    <list default="true" id="583bee0e-fabe-45cf-84e1-994e810e56a0" name="Changes" comment="[FEAT] 카카오 로그인 구현">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/api/member/controller/MemberController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/api/member/dto/KakaoLoginRequestDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/api/member/dto/KakaoUserInfoDTO.java" afterDir="false" />
@@ -19,6 +19,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/common/config/SecurityConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/common/config/jwt/JwtConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/common/config/oauth2/OAuth2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rhkr8521/zerocommission/common/config/swagger/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -62,6 +63,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -93,7 +99,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ZerocommissionApplication.executor": "Run",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "feat/#kakao-login",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/rhkr8521/Desktop/Dev-Project/zc/Backend",
     "node.js.detected.package.eslint": "true",
@@ -115,8 +121,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17723006" />
-      <window_info id="Commit" order="1" weight="0.17723006" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17723006" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.17723006" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -126,9 +132,9 @@
       <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
-      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info active="true" anchor="bottom" id="Problems View" order="2" visible="true" weight="0.31811646" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.31811646" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.31811646" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.31811646" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
@@ -167,12 +173,25 @@
       <option name="presentableId" value="Default" />
       <updated>1727833774185</updated>
       <workItem from="1727833774952" duration="589000" />
-      <workItem from="1727834660587" duration="5110000" />
+      <workItem from="1727834660587" duration="5415000" />
     </task>
+    <task id="LOCAL-00001" summary="[FEAT] 카카오 로그인 구현">
+      <option name="closed" value="true" />
+      <created>1727915846264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727915846265</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[FEAT] 카카오 로그인 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEAT] 카카오 로그인 구현" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
