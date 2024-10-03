@@ -53,8 +53,6 @@ public class MemberService {
                 .socialId(kakaoUserInfo.getId())
                 .email(UUID.randomUUID() + "@socialUser.com")
                 .nickname(kakaoUserInfo.getNickname())
-                .imageUrl(kakaoUserInfo.getProfileImage())
-                .marketing_allow(Boolean.FALSE)
                 .role(Role.GUEST)
                 .build();
 
