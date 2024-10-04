@@ -24,7 +24,9 @@ public class Member extends BaseTimeEntity implements UserDetails {
     private Long id;
 
     private String email; // 이메일
-    private String nickname; // 닉네임
+    private String kakaoNickname; // 카카오닉네임
+    private String nickname; // 앱 익네임
+    private String profileImage; // 프로필 이미지
 
     @Enumerated(EnumType.STRING)
     private Role role; // 권한
@@ -33,17 +35,31 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String refreshToken; // 리프레시 토큰
 
-    // 유저 권한 설정 메소드
-    public Member authorizeUser() {
+    // 가게 유저 권한 설정 메소드
+    public Member changeHost() {
         return this.toBuilder()
-                .role(Role.USER)
+                .role(Role.HOST)
                 .build();
     }
 
-    // 닉네임 필드 업데이트
+    // 카카오닉네임 필드 업데이트
+    public Member updateKakaoNickname(String updateKakaoNickname) {
+        return this.toBuilder()
+                .kakaoNickname(updateKakaoNickname)
+                .build();
+    }
+
+    // 앱 닉네임 필드 업데이트
     public Member updateNickname(String updateNickname) {
         return this.toBuilder()
                 .nickname(updateNickname)
+                .build();
+    }
+
+    // 프로필 필드 업데이트
+    public Member updateProfileImage(String updateProfileImage) {
+        return this.toBuilder()
+                .profileImage(updateProfileImage)
                 .build();
     }
 
