@@ -40,12 +40,12 @@ public class SwaggerConfig {
         SecurityRequirement refreshTokenRequirement = new SecurityRequirement().addList(refreshTokenHeader);
 
         Server server = new Server();
-        server.setUrl("http://localhost:8080");
+        server.setUrl("https://spaceon.kro.kr");
 
         return new OpenAPI()
                 .info(new Info()
-                        .title("ZeroCommission")
-                        .description("ZeroCommission REST API Document - Backend Developer : 태근")
+                        .title("SpaceON")
+                        .description("SpaceON REST API Document - Backend Developer : 태근")
                         .version("1.0.0"))
                 .components(new Components()
                         .addSecuritySchemes(accessTokenHeader, accessTokenScheme)

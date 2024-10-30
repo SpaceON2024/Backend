@@ -41,7 +41,7 @@ public class SecurityConfig {
                     public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                         CorsConfiguration config = new CorsConfiguration();
                         config.setAllowedOrigins(Arrays.asList(
-                                "https://zerocommission.o-r.kr",
+                                "https://spaceon.kro.kr",
                                 "http://localhost:3000"
                         ));
                         config.setAllowedMethods(Collections.singletonList("*"));
