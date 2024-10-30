@@ -63,3 +63,7 @@ out/
 
 ### Yml ###
 *.yml
+
+*.lock
+*.bin
+*.xml

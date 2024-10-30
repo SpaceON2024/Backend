@@ -34,6 +34,8 @@ public class MemberService {
         Map<String, Object> response = new HashMap<>();
         response.put("tokens", tokens);
         response.put("profileImage", member.getProfileImage());
+        response.put("socialId", member.getSocialId());
+        response.put("nickname", member.getKakaoNickname());
 
         return response;
     }
