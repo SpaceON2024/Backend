@@ -33,10 +33,10 @@ public class Member extends BaseTimeEntity implements UserDetails {
 
     private String refreshToken; // 리프레시 토큰
 
-    // 가게 유저 권한 설정 메소드
-    public Member changeHost() {
+    // 관리자 권한 설정 메소드
+    public Member changeAdmin() {
         return this.toBuilder()
-                .role(Role.HOST)
+                .role(Role.ADMIN)
                 .build();
     }
 

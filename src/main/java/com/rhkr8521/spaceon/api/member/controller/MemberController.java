@@ -38,7 +38,7 @@ public class MemberController {
 
     @Operation(
             summary = "로그인 API",
-            description = "카카오 엑세스토큰을 통해 사용자의 정보를 등록 및 토큰을 발급합니다. (ROLE -> 일반사용자 : USER, 가게사용자 : HOST, 관리자 : ADMIN)"
+            description = "카카오 엑세스토큰을 통해 사용자의 정보를 등록 및 토큰을 발급합니다."
     )
     @ApiResponses({
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "로그인 성공"),
