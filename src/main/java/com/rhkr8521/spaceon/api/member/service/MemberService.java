@@ -4,6 +4,8 @@ import com.rhkr8521.spaceon.api.member.dto.*;
 import com.rhkr8521.spaceon.api.member.entity.*;
 import com.rhkr8521.spaceon.api.member.jwt.service.JwtService;
 import com.rhkr8521.spaceon.api.member.repository.MemberRepository;
+import com.rhkr8521.spaceon.common.exception.NotFoundException;
+import com.rhkr8521.spaceon.common.response.ErrorStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -38,6 +40,13 @@ public class MemberService {
         response.put("nickname", member.getKakaoNickname());
 
         return response;
+    }
+
+    @Transactional(readOnly = true)
+    public Long getUserIdByEmail(String email) {
+        Member member = memberRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException(ErrorStatus.USER_NOTFOUND_EXCEPTION.getMessage()));
+        return member.getId();
     }
 
     // 카카오 사용자 정보를 사용해 회원가입 또는 로그인 처리
