@@ -1,5 +1,6 @@
 package com.rhkr8521.spaceon.api.member.entity;
 
+import com.rhkr8521.spaceon.api.group.entity.Group;
 import com.rhkr8521.spaceon.common.entity.BaseTimeEntity;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
