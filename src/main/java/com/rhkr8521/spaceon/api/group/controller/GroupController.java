@@ -87,4 +87,20 @@ public class GroupController {
 
         return ApiResponse.success(SuccessStatus.APPROVE_JOIN_SUCCESS, approve ? "승인됨" : "거부됨");
     }
+
+    // 그룹 목록 조회 API
+    @Operation(
+            summary = "모든 그룹 목록 조회 API",
+            description = "생성된 모든 그룹 목록을 조회하는 API입니다."
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "그룹 목록 조회 성공"),
+    })
+    @GetMapping("/list")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> listGroups(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        Map<String, Object> response = groupService.listGroups(page, size);
+        return ApiResponse.success(SuccessStatus.SEND_LIST_GROUP_SUCCESS, response);
+    }
 }

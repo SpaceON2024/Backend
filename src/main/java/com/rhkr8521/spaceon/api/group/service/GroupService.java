@@ -1,6 +1,7 @@
 package com.rhkr8521.spaceon.api.group.service;
 
 import com.rhkr8521.spaceon.api.group.dto.GroupCreateRequestDTO;
+import com.rhkr8521.spaceon.api.group.dto.GroupListResponseDTO;
 import com.rhkr8521.spaceon.api.group.entity.Group;
 import com.rhkr8521.spaceon.api.group.entity.GroupJoinRequest;
 import com.rhkr8521.spaceon.api.group.repository.GroupJoinRequestRepository;
@@ -11,10 +12,15 @@ import com.rhkr8521.spaceon.common.exception.BadRequestException;
 import com.rhkr8521.spaceon.common.exception.NotFoundException;
 import com.rhkr8521.spaceon.common.response.ErrorStatus;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -89,5 +95,22 @@ public class GroupService {
             group.addMember(joinRequest.getMember()); // 그룹에 멤버 추가
             groupRepository.save(group); // 그룹 정보 업데이트
         }
+    }
+
+    // 그룹 목록 조회
+    public Map<String, Object> listGroups(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Group> groupPage = groupRepository.findAll(pageable);
+
+        List<GroupListResponseDTO> groups;
+        groups = groupPage.getContent().stream()
+                .map(group -> new GroupListResponseDTO(group.getId(), group.getGroupName(), group.getGroupContent()))
+                .collect(Collectors.toList());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("groups", groups);
+        response.put("last", groupPage.isLast());
+
+        return response;
     }
 }

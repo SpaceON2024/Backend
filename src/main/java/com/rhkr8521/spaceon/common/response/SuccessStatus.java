@@ -17,6 +17,7 @@ public enum SuccessStatus {
     SEND_REISSUE_TOKEN_SUCCESS(HttpStatus.OK,"토큰 재발급 성공"),
     JOIN_GROUP_SUCEESS(HttpStatus.OK, "그룹 참가 신청 성공"),
     APPROVE_JOIN_SUCCESS(HttpStatus.OK, "그룹 참가 승인 성공"),
+    SEND_LIST_GROUP_SUCCESS(HttpStatus.OK, "그룹 리스트 조회 성공"),
 
 
     /**
